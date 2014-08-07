@@ -58,6 +58,8 @@ INSTALLED_APPS = (
     'django_tables2',
     'django_filters',
     #'south',
+    #Added Django-Bower 
+    'djangobower',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,6 +74,15 @@ MIDDLEWARE_CLASSES = (
     'two_factor.middleware.threadlocals.ThreadLocals',
 )
 
+#ADDED NEW DEPENDENCIES
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'typeahead.js',
+    'handlebars',
+    'scriptjs',
+    'form-autofill',
+)
+    
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
 )
@@ -110,6 +121,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#bower_components
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR,'static')
+
+#BOWER_STATIC_FILES_FINDER
+#STATICFILES_FINDERS = (
+#    'djangobower.finders.BowerFinder',
+#)
+
 
 # template location
 TEMPLATE_DIRS = (
